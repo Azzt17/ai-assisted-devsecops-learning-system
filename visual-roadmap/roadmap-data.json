@@ -163,7 +163,7 @@
       "repo": "systems-foundation-labs",
       "competencyQuestion": "Apakah saya memahami lingkungan tempat software berjalan dan bisa investigasi dasar saat sistem bermasalah?",
       "priority": "critical",
-      "status": "not-started",
+      "status": "in-progress",
       "progress": 0,
       "tags": ["NO-AI-FIRST", "FRICTION-ZONE", "EXPLAIN-WITHOUT-AI"],
       "dependsOn": ["phase-0-learning-operating-system"],
