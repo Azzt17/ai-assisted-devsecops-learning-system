@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI-Assisted DevSecOps V-Shape Roadmap</title>
+    <meta
+      name="description"
+      content="A static execution dashboard for an AI-assisted DevSecOps V-shape learning roadmap."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Learning cockpit</p>
+          <h1 id="roadmap-title">AI-Assisted DevSecOps V-Shape Roadmap</h1>
+          <p id="roadmap-description" class="hero-description">
+            Backend-heavy. Cloud-delivered. Security-disciplined. AI-accelerated, but not AI-dependent.
+          </p>
+        </div>
+        <div class="hero-card" aria-label="Core direction">
+          <span class="hero-card-label">Core Direction</span>
+          <strong id="core-direction">Backend-heavy DevSecOps</strong>
+          <small id="core-subtitle">Cloud as delivery environment. Security as quality discipline.</small>
+        </div>
+      </header>
+
+      <main>
+        <section class="dashboard-grid" aria-label="Roadmap dashboard">
+          <article class="panel progress-panel">
+            <div class="panel-heading">
+              <p class="section-label">Overall progress</p>
+              <strong id="overall-progress-label">0%</strong>
+            </div>
+            <div class="progress-track" aria-hidden="true">
+              <div id="overall-progress-bar" class="progress-bar"></div>
+            </div>
+            <div id="summary-stats" class="stat-grid"></div>
+          </article>
+
+          <article class="panel current-panel">
+            <p class="section-label">Current focus</p>
+            <h2 id="current-phase-title">Loading roadmap...</h2>
+            <p id="current-phase-mission" class="muted"></p>
+            <div id="current-phase-tags" class="tag-row"></div>
+            <div class="next-action-box">
+              <span>Next action</span>
+              <strong id="current-next-action">—</strong>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel controls-panel" aria-label="Filters">
+          <div class="controls-header">
+            <div>
+              <p class="section-label">Execution filters</p>
+              <h2>Find the next useful friction</h2>
+            </div>
+            <button id="reset-filters" class="ghost-button" type="button">Reset filters</button>
+          </div>
+          <div class="controls-grid">
+            <label>
+              Search
+              <input id="search-input" type="search" placeholder="phase, skill, repo, tag..." />
+            </label>
+            <label>
+              Status
+              <select id="status-filter">
+                <option value="all">All statuses</option>
+              </select>
+            </label>
+            <label>
+              Tag
+              <select id="tag-filter">
+                <option value="all">All tags</option>
+              </select>
+            </label>
+            <label>
+              Priority
+              <select id="priority-filter">
+                <option value="all">All priorities</option>
+              </select>
+            </label>
+          </div>
+        </section>
+
+        <section class="layout-grid">
+          <aside class="side-column">
+            <section class="panel legend-panel" aria-label="Friction tag legend">
+              <p class="section-label">Friction tags</p>
+              <h2>Rules for slowing down</h2>
+              <div id="tag-legend" class="legend-list"></div>
+            </section>
+
+            <section class="panel portfolio-panel" aria-label="Portfolio repositories">
+              <p class="section-label">Portfolio board</p>
+              <h2>Repo outputs</h2>
+              <div id="portfolio-board" class="repo-list"></div>
+            </section>
+          </aside>
+
+          <section class="main-column">
+            <section class="panel timeline-panel" aria-label="Roadmap flow">
+              <div class="panel-heading">
+                <div>
+                  <p class="section-label">Phase flow</p>
+                  <h2>From learning OS to AI-native DevSecOps</h2>
+                </div>
+                <span id="visible-count" class="pill">0 phases</span>
+              </div>
+              <div id="timeline" class="timeline"></div>
+            </section>
+
+            <section id="phase-list" class="phase-list" aria-label="Roadmap phases"></section>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <template id="phase-card-template">
+      <article class="phase-card">
+        <div class="phase-card-header">
+          <div>
+            <p class="phase-number"></p>
+            <h3 class="phase-title"></h3>
+            <p class="phase-mission"></p>
+          </div>
+          <div class="phase-meta"></div>
+        </div>
+        <div class="phase-tags tag-row"></div>
+        <div class="phase-progress-wrap">
+          <div class="progress-track small"><div class="progress-bar"></div></div>
+          <span class="phase-progress-label"></span>
+        </div>
+        <div class="phase-quick-grid"></div>
+        <button class="details-toggle" type="button">View details</button>
+        <div class="phase-details" hidden></div>
+      </article>
+    </template>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

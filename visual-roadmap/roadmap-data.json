@@ -1,0 +1,988 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "AI-Assisted DevSecOps V-Shape Roadmap",
+  "description": "Static web tracker data extracted from AI_ASSISTED_DEVSECOPS_VSHAPE_ROADMAP.md and ROADMAP_TRACKER.md.",
+  "sourceOfTruth": {
+    "mainDocument": "AI_ASSISTED_DEVSECOPS_VSHAPE_ROADMAP.md",
+    "trackerDocument": "ROADMAP_TRACKER.md"
+  },
+  "coreDirection": {
+    "learningModel": "V-Shape Developer for the AI Era",
+    "defaultOrientation": "Backend-heavy",
+    "deliveryEnvironment": "Cloud",
+    "qualityDiscipline": "Security",
+    "aiRole": [
+      "tutor",
+      "implementer",
+      "reviewer",
+      "adversary",
+      "debugger"
+    ],
+    "humanRole": [
+      "design owner",
+      "debugger",
+      "security reasoner",
+      "system explainer"
+    ],
+    "mainRule": "AI boleh mempercepat produksi, tetapi tidak boleh menggantikan model mental, debugging autonomy, design ownership, dan secure reasoning."
+  },
+  "tagLegend": [
+    {
+      "id": "AI-OK",
+      "label": "AI-OK",
+      "meaning": "AI boleh digunakan penuh",
+      "action": "Cocok untuk boilerplate, scaffold, draft, dan eksplorasi awal."
+    },
+    {
+      "id": "REVIEW-DEEP",
+      "label": "REVIEW-DEEP",
+      "meaning": "Output AI wajib dibaca dan dikritik",
+      "action": "Jelaskan trade-off, risiko, failure mode, dan simplifikasi."
+    },
+    {
+      "id": "NO-AI-FIRST",
+      "label": "NO-AI-FIRST",
+      "meaning": "Coba sendiri sebelum minta solusi final",
+      "action": "Tulis hipotesis, coba 15-30 menit, baru minta koreksi arah."
+    },
+    {
+      "id": "FRICTION-ZONE",
+      "label": "FRICTION-ZONE",
+      "meaning": "Area perkembangan utama",
+      "action": "Jangan mengejar selesai cepat. Bangun debugging autonomy."
+    },
+    {
+      "id": "BREAK-AND-FIX",
+      "label": "BREAK-AND-FIX",
+      "meaning": "Sengaja rusak lalu perbaiki",
+      "action": "Dokumentasikan gejala, penyebab, fix, dan pencegahan."
+    },
+    {
+      "id": "PORTFOLIO-GRADE",
+      "label": "PORTFOLIO-GRADE",
+      "meaning": "Harus layak dilihat publik",
+      "action": "README, diagram, tests, CI/CD, security checklist, decision log."
+    },
+    {
+      "id": "EXPLAIN-WITHOUT-AI",
+      "label": "EXPLAIN-WITHOUT-AI",
+      "meaning": "Harus bisa dijelaskan tanpa AI",
+      "action": "Jelaskan alur, trade-off, trust boundary, dan failure mode."
+    }
+  ],
+  "statusConvention": [
+    {
+      "id": "not-started",
+      "label": "Not Started",
+      "meaning": "Belum dimulai"
+    },
+    {
+      "id": "learning",
+      "label": "Learning",
+      "meaning": "Sedang memahami konsep"
+    },
+    {
+      "id": "building",
+      "label": "Building",
+      "meaning": "Sedang membuat lab/repo"
+    },
+    {
+      "id": "reviewing",
+      "label": "Reviewing",
+      "meaning": "Sedang deep review dan hardening"
+    },
+    {
+      "id": "friction",
+      "label": "Friction",
+      "meaning": "Sedang menghadapi bug/failure yang perlu dipahami"
+    },
+    {
+      "id": "portfolio-grade",
+      "label": "Portfolio Grade",
+      "meaning": "Sudah layak ditampilkan sebagai portofolio"
+    },
+    {
+      "id": "maintained",
+      "label": "Maintained",
+      "meaning": "Sudah matang dan hanya perlu update berkala"
+    }
+  ],
+  "phases": [
+    {
+      "id": "phase-0-learning-operating-system",
+      "phase": 0,
+      "title": "Learning Operating System",
+      "mission": "Membuat sistem belajar utama agar semua AI partner, semua repo, dan semua project mengikuti prinsip yang sama.",
+      "repo": "ai-assisted-devsecops-learning-system",
+      "competencyQuestion": "Apakah saya punya sistem belajar yang membuat AI partner langsung memahami tujuan, aturan, dan standar saya?",
+      "priority": "critical",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "PORTFOLIO-GRADE",
+        "EXPLAIN-WITHOUT-AI",
+        "REVIEW-DEEP"
+      ],
+      "dependsOn": [],
+      "skills": [
+        "AI-assisted learning design",
+        "Prompt-as-specification",
+        "Learning protocol",
+        "Friction management",
+        "Project standardization",
+        "Documentation discipline",
+        "Self-review habit"
+      ],
+      "requiredFiles": [
+        "README.md",
+        "AI_CONTEXT.md",
+        "MANIFESTO.md",
+        "ROADMAP.md",
+        "ROADMAP_TRACKER.md",
+        "FRICTION_PROTOCOL.md",
+        "PROJECT_STANDARD.md",
+        "PROMPT_LIBRARY.md",
+        "templates/DECISION_LOG_TEMPLATE.md",
+        "templates/POSTMORTEM_TEMPLATE.md",
+        "templates/SECURITY_REVIEW_TEMPLATE.md",
+        "templates/PROJECT_README_TEMPLATE.md"
+      ],
+      "manualDrills": [
+        "Tulis tujuan belajar dalam 5 kalimat tanpa AI.",
+        "Tulis definisi V-shape developer versi sendiri.",
+        "Jelaskan kenapa AI tidak boleh menggantikan debugging autonomy.",
+        "Tulis standar minimal repo portfolio-grade."
+      ],
+      "labs": [],
+      "breakAndFix": [],
+      "exitCriteria": [
+        "Repo fase 0 sudah dibuat.",
+        "AI_CONTEXT.md bisa diberikan ke AI lain dan menghasilkan respons yang selaras.",
+        "Friction tags sudah didefinisikan.",
+        "Project standard sudah jelas.",
+        "Roadmap bisa dijelaskan tanpa membaca seluruh dokumen."
+      ],
+      "nextAction": "Create repo and add core docs",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-1-systems-foundation",
+      "phase": 1,
+      "title": "Systems Foundation",
+      "mission": "Membangun fondasi Linux, Git, networking, HTTP, DNS, TLS, terminal, dan debugging dasar.",
+      "repo": "systems-foundation-labs",
+      "competencyQuestion": "Apakah saya memahami lingkungan tempat software berjalan dan bisa investigasi dasar saat sistem bermasalah?",
+      "priority": "critical",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "NO-AI-FIRST",
+        "FRICTION-ZONE",
+        "EXPLAIN-WITHOUT-AI"
+      ],
+      "dependsOn": [
+        "phase-0-learning-operating-system"
+      ],
+      "skills": [
+        "Linux filesystem and permissions",
+        "Process, signals, ports",
+        "Shell scripting basics",
+        "Git workflow",
+        "GitHub collaboration workflow",
+        "HTTP request/response",
+        "DNS lookup",
+        "TLS basics",
+        "TCP/IP mental model",
+        "curl, dig, ss, journalctl, grep, awk",
+        "Environment variables",
+        "Log reading"
+      ],
+      "labs": [
+        "Trace HTTP request dengan curl -v.",
+        "Cek DNS resolution dengan dig atau nslookup.",
+        "Jalankan service lokal dan cek port terbuka.",
+        "Buat script log parser sederhana.",
+        "Simulasikan permission error.",
+        "Simulasikan port conflict.",
+        "Buat Git branching workflow dan resolve conflict sederhana."
+      ],
+      "manualDrills": [
+        "Baca error permission tanpa AI.",
+        "Cari process yang memakai port tertentu.",
+        "Jelaskan request HTTP sederhana.",
+        "Lakukan Git revert/reset dasar dengan hati-hati.",
+        "Baca log service sederhana."
+      ],
+      "breakAndFix": [],
+      "exitCriteria": [
+        "Bisa menjelaskan alur request HTTP dari client ke server.",
+        "Bisa memakai terminal untuk investigasi dasar.",
+        "Bisa membaca log error sederhana.",
+        "Bisa resolve Git conflict kecil.",
+        "Bisa menjelaskan DNS dan TLS secara high-level tanpa AI."
+      ],
+      "nextAction": "Start HTTP/DNS/Linux labs",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-2-secure-backend-foundation",
+      "phase": 2,
+      "title": "Secure Backend Foundation",
+      "mission": "Membangun backend API yang aman, testable, dan bisa dijelaskan.",
+      "repo": "secure-api-template",
+      "competencyQuestion": "Apakah saya bisa membangun backend API production-minded dengan auth, validation, testing, logging, dan security baseline?",
+      "priority": "critical",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "NO-AI-FIRST",
+        "FRICTION-ZONE",
+        "PORTFOLIO-GRADE"
+      ],
+      "dependsOn": [
+        "phase-1-systems-foundation"
+      ],
+      "skills": [
+        "API design",
+        "Routing",
+        "Request validation",
+        "Error handling",
+        "Structured logging",
+        "Database migration",
+        "Database transaction",
+        "Authentication",
+        "Authorization",
+        "Password hashing",
+        "Session/token strategy",
+        "Rate limiting",
+        "Input validation",
+        "Testing",
+        "Config management",
+        "Docker Compose for local dev"
+      ],
+      "aiUsage": [
+        {
+          "tag": "AI-OK",
+          "scope": "Scaffold, contoh handler, test template, Docker Compose, README awal."
+        },
+        {
+          "tag": "REVIEW-DEEP",
+          "scope": "Auth flow, password handling, token lifecycle, authorization, transaction, security error handling."
+        }
+      ],
+      "labs": [
+        "Implementasi API CRUD minimal dengan validation.",
+        "Implementasi authentication sederhana.",
+        "Implementasi authorization berdasarkan role atau ownership.",
+        "Tambahkan rate limiting.",
+        "Tambahkan test untuk happy path dan failure path.",
+        "Tambahkan structured logging.",
+        "Tambahkan security checklist."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Buat endpoint yang lupa authorization, lalu temukan dan perbaiki.",
+        "Buat validation lemah, lalu tulis test yang membuktikan bug.",
+        "Buat token expired tidak ditangani, lalu debug.",
+        "Buat database transaction gagal di tengah proses, lalu rollback."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan request flow dari router sampai database.",
+        "Bisa menjelaskan authentication vs authorization.",
+        "Bisa menulis test dasar tanpa AI.",
+        "Bisa debug auth bug sederhana.",
+        "Bisa menjelaskan threat model API secara ringkas.",
+        "Repo sudah portfolio-grade."
+      ],
+      "nextAction": "Define API baseline scope",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-3-devops-core",
+      "phase": 3,
+      "title": "DevOps Core: Build, Test, Package, Release",
+      "mission": "Mengubah kode menjadi artifact yang bisa diuji, dibangun, dan dirilis secara otomatis.",
+      "repo": "cicd-delivery-lab",
+      "competencyQuestion": "Apakah saya bisa membuat pipeline yang mengubah commit menjadi artifact secara otomatis dan terkontrol?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "AI-OK",
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "PORTFOLIO-GRADE"
+      ],
+      "dependsOn": [
+        "phase-2-secure-backend-foundation"
+      ],
+      "skills": [
+        "CI/CD concept",
+        "GitHub Actions atau alternatif",
+        "Linting",
+        "Automated test",
+        "Build artifact",
+        "Docker image build",
+        "Container registry",
+        "Semantic versioning",
+        "Release notes",
+        "Branch protection",
+        "Environment separation",
+        "Rollback basics"
+      ],
+      "labs": [
+        "Pipeline untuk lint, test, build.",
+        "Pipeline untuk build Docker image.",
+        "Push image ke registry.",
+        "Release tag otomatis.",
+        "Fail pipeline jika test gagal.",
+        "Tambahkan badge pipeline ke README."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Sengaja buat test gagal.",
+        "Sengaja buat Docker build gagal.",
+        "Sengaja ubah environment variable menjadi salah.",
+        "Sengaja buat pipeline memakai path yang salah."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan alur commit sampai artifact.",
+        "Bisa membaca log pipeline.",
+        "Bisa memperbaiki pipeline gagal sederhana.",
+        "Bisa menjelaskan kenapa CI harus gagal saat test gagal.",
+        "Bisa menjelaskan risiko secret di pipeline."
+      ],
+      "nextAction": "Create basic CI pipeline",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-4-shift-left-security-pipeline",
+      "phase": 4,
+      "title": "Shift-Left Security Pipeline",
+      "mission": "Memasukkan security check sejak awal development, bukan setelah project selesai.",
+      "repo": "shift-left-security-pipeline",
+      "competencyQuestion": "Apakah saya bisa membuat pipeline yang otomatis mendeteksi risiko security dasar sebelum kode masuk lebih jauh?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "BREAK-AND-FIX",
+        "PORTFOLIO-GRADE"
+      ],
+      "dependsOn": [
+        "phase-3-devops-core"
+      ],
+      "skills": [
+        "SAST",
+        "SCA/dependency scanning",
+        "Secret scanning",
+        "Container scanning",
+        "Security linting rules",
+        "Pre-commit hooks",
+        "Security gates",
+        "Vulnerability triage",
+        "False positive handling",
+        "Severity prioritization"
+      ],
+      "labs": [
+        "Tambahkan secret scanner.",
+        "Tambahkan dependency scanner.",
+        "Tambahkan SAST sederhana.",
+        "Tambahkan container image scanner.",
+        "Buat pipeline gagal jika severity melewati threshold.",
+        "Dokumentasikan cara membaca hasil scan."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Commit dummy secret lalu pastikan scanner mendeteksi.",
+        "Gunakan dependency vulnerable lalu lakukan update.",
+        "Buat Docker image dengan base image rentan lalu ganti.",
+        "Tambahkan false positive dan dokumentasikan triage."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan perbedaan SAST, SCA, secret scanning, dan container scanning.",
+        "Bisa membaca report scanner.",
+        "Bisa membedakan vulnerability kritis dan noise.",
+        "Bisa memperbaiki dependency vulnerable.",
+        "Bisa menjelaskan kenapa shift-left bukan berarti semua security selesai di awal."
+      ],
+      "nextAction": "Add secret/dependency scanner",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-5-cicd-security-and-supply-chain",
+      "phase": 5,
+      "title": "CI/CD Security and Software Supply Chain",
+      "mission": "Memahami bahwa pipeline dan dependency adalah bagian dari attack surface.",
+      "repo": "software-supply-chain-lab",
+      "competencyQuestion": "Apakah saya memahami risiko dependency, artifact, registry, pipeline token, provenance, dan integrity?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "BREAK-AND-FIX",
+        "EXPLAIN-WITHOUT-AI"
+      ],
+      "dependsOn": [
+        "phase-4-shift-left-security-pipeline"
+      ],
+      "skills": [
+        "CI/CD threat model",
+        "Least privilege pipeline token",
+        "Branch protection",
+        "Protected environment",
+        "Dependency pinning",
+        "Artifact integrity",
+        "SBOM",
+        "Signing basics",
+        "Provenance",
+        "SLSA concepts",
+        "Registry permissions",
+        "Third-party action risk",
+        "Build reproducibility basics"
+      ],
+      "labs": [
+        "Buat CI/CD threat model.",
+        "Audit permission pipeline.",
+        "Generate SBOM.",
+        "Pin dependency atau action version.",
+        "Simulasikan risiko third-party action.",
+        "Tambahkan artifact checksum.",
+        "Dokumentasikan provenance secara konseptual."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Pakai action tanpa pinning, lalu harden.",
+        "Berikan token terlalu luas, lalu kurangi.",
+        "Buat artifact tanpa checksum, lalu tambahkan integrity check.",
+        "Simulasikan dependency update yang menyebabkan test gagal."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan kenapa CI/CD adalah attack surface.",
+        "Bisa menjelaskan SBOM secara praktis.",
+        "Bisa menjelaskan kenapa dependency pinning penting.",
+        "Bisa menjelaskan least privilege untuk pipeline.",
+        "Bisa menjelaskan provenance dan artifact integrity."
+      ],
+      "nextAction": "Create CI/CD threat model",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-6-cloud-and-iac",
+      "phase": 6,
+      "title": "Cloud and Infrastructure as Code",
+      "mission": "Menjalankan sistem di cloud dengan konfigurasi yang aman, dapat direproduksi, dan dapat diamati.",
+      "repo": "cloud-secure-baseline",
+      "competencyQuestion": "Apakah saya bisa membuat baseline deployment cloud dengan least privilege, networking masuk akal, secret management, logging, dan IaC?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "NO-AI-FIRST",
+        "PORTFOLIO-GRADE"
+      ],
+      "dependsOn": [
+        "phase-5-cicd-security-and-supply-chain"
+      ],
+      "skills": [
+        "Cloud IAM",
+        "VPC/networking basics",
+        "Compute service",
+        "Managed database",
+        "Object storage",
+        "Security group/firewall",
+        "Secret manager",
+        "Environment separation",
+        "Terraform/OpenTofu basics",
+        "Remote state concept",
+        "Least privilege",
+        "Cloud logging",
+        "Backup basics",
+        "Cost awareness"
+      ],
+      "labs": [
+        "Deploy backend sederhana ke cloud.",
+        "Buat IaC baseline.",
+        "Pisahkan dev/staging secara sederhana.",
+        "Simpan secret dengan benar.",
+        "Aktifkan logging.",
+        "Batasi inbound access.",
+        "Dokumentasikan diagram arsitektur."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Salah konfigurasi security group, lalu debug.",
+        "IAM permission kurang, lalu investigasi.",
+        "Environment variable hilang, lalu perbaiki.",
+        "Database tidak bisa diakses karena network rule, lalu trace.",
+        "Deployment gagal karena secret belum tersedia."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan arsitektur cloud baseline.",
+        "Bisa menjelaskan IAM least privilege.",
+        "Bisa membaca log deployment.",
+        "Bisa memperbaiki permission/network issue dasar.",
+        "Bisa menjelaskan perbedaan config lokal dan cloud.",
+        "Bisa menghitung risiko biaya dasar."
+      ],
+      "nextAction": "Define minimal cloud architecture",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-7-container-and-kubernetes-security",
+      "phase": 7,
+      "title": "Container and Kubernetes Security",
+      "mission": "Memahami cloud-native deployment tanpa menjadikan Kubernetes sebagai distraksi terlalu awal.",
+      "repo": "kubernetes-security-lab",
+      "competencyQuestion": "Apakah saya bisa menjalankan workload container secara aman dengan RBAC, secret handling, network policy, dan observability dasar?",
+      "priority": "medium",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "BREAK-AND-FIX",
+        "PORTFOLIO-GRADE"
+      ],
+      "dependsOn": [
+        "phase-6-cloud-and-iac"
+      ],
+      "skills": [
+        "Container image hardening",
+        "Non-root container",
+        "Image scanning",
+        "Kubernetes deployment",
+        "Service",
+        "Ingress",
+        "ConfigMap",
+        "Secret",
+        "Namespace",
+        "RBAC",
+        "Network policy",
+        "Resource limit",
+        "Health check",
+        "Pod security basics",
+        "Runtime visibility"
+      ],
+      "labs": [
+        "Deploy app ke local Kubernetes.",
+        "Tambahkan resource limits.",
+        "Tambahkan readiness/liveness probe.",
+        "Terapkan RBAC minimal.",
+        "Terapkan network policy sederhana.",
+        "Scan container image.",
+        "Dokumentasikan threat model cluster sederhana."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Pod crash karena config salah.",
+        "Service tidak bisa diakses karena selector salah.",
+        "Ingress salah route.",
+        "Permission RBAC terlalu sempit atau terlalu luas.",
+        "Secret tidak tersedia.",
+        "Image tidak bisa pull."
+      ],
+      "exitCriteria": [
+        "Bisa menjelaskan kapan Kubernetes diperlukan dan kapan tidak.",
+        "Bisa debug pod crash sederhana.",
+        "Bisa menjelaskan RBAC dan network policy dasar.",
+        "Bisa menjelaskan risiko secret di cluster.",
+        "Bisa menjalankan deployment minimal yang observable."
+      ],
+      "nextAction": "Start after container/cloud foundation",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-8-observability-incident-response-reliability",
+      "phase": 8,
+      "title": "Observability, Incident Response, and Reliability",
+      "mission": "Membangun kemampuan mendeteksi, menganalisis, dan memperbaiki kegagalan sistem.",
+      "repo": "observability-incident-lab",
+      "competencyQuestion": "Apakah saya bisa memahami apa yang terjadi di sistem ketika sesuatu gagal?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "FRICTION-ZONE",
+        "BREAK-AND-FIX",
+        "NO-AI-FIRST",
+        "EXPLAIN-WITHOUT-AI"
+      ],
+      "dependsOn": [
+        "phase-6-cloud-and-iac"
+      ],
+      "skills": [
+        "Structured logging",
+        "Metrics",
+        "Tracing basics",
+        "Alerting",
+        "Dashboard",
+        "SLI/SLO basics",
+        "Error budget concept",
+        "Incident response",
+        "Rollback",
+        "Backup and restore",
+        "Postmortem",
+        "Root cause analysis",
+        "Runbook",
+        "Failure drills"
+      ],
+      "labs": [
+        "Tambahkan logging yang bisa dicari.",
+        "Tambahkan metrics endpoint.",
+        "Buat dashboard sederhana.",
+        "Buat alert sederhana.",
+        "Simulasikan incident.",
+        "Tulis postmortem.",
+        "Buat runbook."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Database down.",
+        "Latency naik.",
+        "Error rate naik.",
+        "Disk/log penuh.",
+        "Deployment buruk butuh rollback.",
+        "Config salah di production-like environment."
+      ],
+      "exitCriteria": [
+        "Bisa menemukan penyebab error dari log dan metrics.",
+        "Bisa menulis postmortem yang jelas.",
+        "Bisa menjelaskan perbedaan symptom dan root cause.",
+        "Bisa melakukan rollback sederhana.",
+        "Bisa membuat runbook yang bisa diikuti orang lain."
+      ],
+      "nextAction": "Define first failure drill",
+      "currentBlocker": null
+    },
+    {
+      "id": "phase-9-ai-native-devsecops-workflow",
+      "phase": 9,
+      "title": "AI-Native DevSecOps Workflow",
+      "mission": "Membangun workflow DevSecOps modern yang memakai AI secara accountable, bukan secara buta.",
+      "repo": "ai-native-devsecops-workflow",
+      "competencyQuestion": "Apakah saya bisa menggunakan AI untuk mempercepat engineering workflow sambil tetap menjaga verifikasi, security, dan ownership manusia?",
+      "priority": "high",
+      "status": "not-started",
+      "progress": 0,
+      "tags": [
+        "REVIEW-DEEP",
+        "FRICTION-ZONE",
+        "PORTFOLIO-GRADE",
+        "EXPLAIN-WITHOUT-AI"
+      ],
+      "dependsOn": [
+        "phase-0-learning-operating-system",
+        "phase-4-shift-left-security-pipeline",
+        "phase-8-observability-incident-response-reliability"
+      ],
+      "skills": [
+        "Prompt-as-spec",
+        "AI-assisted code review",
+        "AI-assisted threat modeling",
+        "AI-assisted test generation",
+        "AI-assisted incident analysis",
+        "AI-assisted documentation",
+        "AI hallucination detection",
+        "Human-in-the-loop review",
+        "AI output evaluation",
+        "Secure prompt/context sharing",
+        "Privacy and secret awareness"
+      ],
+      "labs": [
+        "Buat prompt library untuk backend review.",
+        "Buat prompt library untuk CI/CD review.",
+        "Buat prompt library untuk threat modeling.",
+        "Buat prompt library untuk incident analysis.",
+        "Bandingkan output beberapa AI untuk kasus yang sama.",
+        "Dokumentasikan kesalahan AI dan cara mendeteksinya."
+      ],
+      "manualDrills": [],
+      "breakAndFix": [
+        "Minta AI membuat insecure auth flow, lalu review.",
+        "Minta AI membuat pipeline terlalu permisif, lalu harden.",
+        "Minta AI debugging tanpa log cukup, lalu koreksi prosesnya.",
+        "Minta AI membuat desain overengineered, lalu sederhanakan."
+      ],
+      "exitCriteria": [
+        "Bisa memakai AI sebagai tutor, implementer, reviewer, adversary, dan debugger secara sadar.",
+        "Bisa mendeteksi output AI yang tampak benar tetapi salah.",
+        "Bisa membuat prompt yang membawa AI ke arah reasoning, bukan sekadar jawaban.",
+        "Bisa menjelaskan kapan AI boleh mempercepat dan kapan harus melambat.",
+        "Punya prompt library yang dapat dipakai ulang di project lain."
+      ],
+      "nextAction": "Extract reusable AI prompts",
+      "currentBlocker": null
+    }
+  ],
+  "weeklyExecutionLoop": [
+    {
+      "day": 1,
+      "focus": "Concept and Scope",
+      "output": "Problem statement, selected tag, first-principles notes"
+    },
+    {
+      "day": 2,
+      "focus": "Build with AI",
+      "output": "Scaffold, implementation draft, commit"
+    },
+    {
+      "day": 3,
+      "focus": "Deep Review",
+      "output": "Architecture notes, risk notes, adversarial review"
+    },
+    {
+      "day": 4,
+      "focus": "Manual Drill",
+      "output": "Small component rebuilt without AI"
+    },
+    {
+      "day": 5,
+      "focus": "Break and Fix",
+      "output": "Failure simulation, debugging notes"
+    },
+    {
+      "day": 6,
+      "focus": "Documentation",
+      "output": "README, decision log, security checklist"
+    },
+    {
+      "day": 7,
+      "focus": "Reflection",
+      "output": "What improved, what remains unclear, next NO-AI-FIRST target"
+    }
+  ],
+  "portfolioRepoStandardChecklist": [
+    "Clear problem statement",
+    "README setup instruction",
+    "Architecture diagram or explanation",
+    "Security checklist",
+    "Decision log",
+    "Testing evidence",
+    "CI/CD pipeline",
+    "Known limitations",
+    "AI usage disclosure",
+    "At least one failure case or debugging note"
+  ],
+  "visualRoadmapHints": {
+    "primaryQuestions": [
+      "Saya sedang di fase mana?",
+      "Apa target berikutnya?",
+      "Apa repo output-nya?",
+      "Tag friksi apa yang berlaku?",
+      "Apa exit criteria-nya?"
+    ],
+    "recommendedViews": [
+      "phase graph",
+      "kanban by status",
+      "repo portfolio board",
+      "friction-zone focus list",
+      "exit criteria checklist"
+    ]
+  },
+  "graph": {
+    "nodes": [
+      {
+        "id": "phase-0-learning-operating-system",
+        "phase": 0,
+        "title": "Learning Operating System",
+        "status": "not-started",
+        "priority": "critical",
+        "repo": "ai-assisted-devsecops-learning-system",
+        "tags": [
+          "PORTFOLIO-GRADE",
+          "EXPLAIN-WITHOUT-AI",
+          "REVIEW-DEEP"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-1-systems-foundation",
+        "phase": 1,
+        "title": "Systems Foundation",
+        "status": "not-started",
+        "priority": "critical",
+        "repo": "systems-foundation-labs",
+        "tags": [
+          "NO-AI-FIRST",
+          "FRICTION-ZONE",
+          "EXPLAIN-WITHOUT-AI"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-2-secure-backend-foundation",
+        "phase": 2,
+        "title": "Secure Backend Foundation",
+        "status": "not-started",
+        "priority": "critical",
+        "repo": "secure-api-template",
+        "tags": [
+          "REVIEW-DEEP",
+          "NO-AI-FIRST",
+          "FRICTION-ZONE",
+          "PORTFOLIO-GRADE"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-3-devops-core",
+        "phase": 3,
+        "title": "DevOps Core: Build, Test, Package, Release",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "cicd-delivery-lab",
+        "tags": [
+          "AI-OK",
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "PORTFOLIO-GRADE"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-4-shift-left-security-pipeline",
+        "phase": 4,
+        "title": "Shift-Left Security Pipeline",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "shift-left-security-pipeline",
+        "tags": [
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "BREAK-AND-FIX",
+          "PORTFOLIO-GRADE"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-5-cicd-security-and-supply-chain",
+        "phase": 5,
+        "title": "CI/CD Security and Software Supply Chain",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "software-supply-chain-lab",
+        "tags": [
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "BREAK-AND-FIX",
+          "EXPLAIN-WITHOUT-AI"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-6-cloud-and-iac",
+        "phase": 6,
+        "title": "Cloud and Infrastructure as Code",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "cloud-secure-baseline",
+        "tags": [
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "NO-AI-FIRST",
+          "PORTFOLIO-GRADE"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-7-container-and-kubernetes-security",
+        "phase": 7,
+        "title": "Container and Kubernetes Security",
+        "status": "not-started",
+        "priority": "medium",
+        "repo": "kubernetes-security-lab",
+        "tags": [
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "BREAK-AND-FIX",
+          "PORTFOLIO-GRADE"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-8-observability-incident-response-reliability",
+        "phase": 8,
+        "title": "Observability, Incident Response, and Reliability",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "observability-incident-lab",
+        "tags": [
+          "FRICTION-ZONE",
+          "BREAK-AND-FIX",
+          "NO-AI-FIRST",
+          "EXPLAIN-WITHOUT-AI"
+        ],
+        "progress": 0
+      },
+      {
+        "id": "phase-9-ai-native-devsecops-workflow",
+        "phase": 9,
+        "title": "AI-Native DevSecOps Workflow",
+        "status": "not-started",
+        "priority": "high",
+        "repo": "ai-native-devsecops-workflow",
+        "tags": [
+          "REVIEW-DEEP",
+          "FRICTION-ZONE",
+          "PORTFOLIO-GRADE",
+          "EXPLAIN-WITHOUT-AI"
+        ],
+        "progress": 0
+      }
+    ],
+    "edges": [
+      {
+        "from": "phase-0-learning-operating-system",
+        "to": "phase-1-systems-foundation"
+      },
+      {
+        "from": "phase-1-systems-foundation",
+        "to": "phase-2-secure-backend-foundation"
+      },
+      {
+        "from": "phase-2-secure-backend-foundation",
+        "to": "phase-3-devops-core"
+      },
+      {
+        "from": "phase-3-devops-core",
+        "to": "phase-4-shift-left-security-pipeline"
+      },
+      {
+        "from": "phase-4-shift-left-security-pipeline",
+        "to": "phase-5-cicd-security-and-supply-chain"
+      },
+      {
+        "from": "phase-5-cicd-security-and-supply-chain",
+        "to": "phase-6-cloud-and-iac"
+      },
+      {
+        "from": "phase-6-cloud-and-iac",
+        "to": "phase-7-container-and-kubernetes-security"
+      },
+      {
+        "from": "phase-6-cloud-and-iac",
+        "to": "phase-8-observability-incident-response-reliability"
+      },
+      {
+        "from": "phase-0-learning-operating-system",
+        "to": "phase-9-ai-native-devsecops-workflow"
+      },
+      {
+        "from": "phase-4-shift-left-security-pipeline",
+        "to": "phase-9-ai-native-devsecops-workflow"
+      },
+      {
+        "from": "phase-8-observability-incident-response-reliability",
+        "to": "phase-9-ai-native-devsecops-workflow"
+      }
+    ]
+  }
+}
