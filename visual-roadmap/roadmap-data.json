@@ -11,13 +11,7 @@
     "defaultOrientation": "Backend-heavy",
     "deliveryEnvironment": "Cloud",
     "qualityDiscipline": "Security",
-    "aiRole": [
-      "tutor",
-      "implementer",
-      "reviewer",
-      "adversary",
-      "debugger"
-    ],
+    "aiRole": ["tutor", "implementer", "reviewer", "adversary", "debugger"],
     "humanRole": [
       "design owner",
       "debugger",
@@ -118,11 +112,7 @@
       "priority": "critical",
       "status": "not-started",
       "progress": 0,
-      "tags": [
-        "PORTFOLIO-GRADE",
-        "EXPLAIN-WITHOUT-AI",
-        "REVIEW-DEEP"
-      ],
+      "tags": ["PORTFOLIO-GRADE", "EXPLAIN-WITHOUT-AI", "REVIEW-DEEP"],
       "dependsOn": [],
       "skills": [
         "AI-assisted learning design",
@@ -175,14 +165,8 @@
       "priority": "critical",
       "status": "not-started",
       "progress": 0,
-      "tags": [
-        "NO-AI-FIRST",
-        "FRICTION-ZONE",
-        "EXPLAIN-WITHOUT-AI"
-      ],
-      "dependsOn": [
-        "phase-0-learning-operating-system"
-      ],
+      "tags": ["NO-AI-FIRST", "FRICTION-ZONE", "EXPLAIN-WITHOUT-AI"],
+      "dependsOn": ["phase-0-learning-operating-system"],
       "skills": [
         "Linux filesystem and permissions",
         "Process, signals, ports",
@@ -240,9 +224,7 @@
         "FRICTION-ZONE",
         "PORTFOLIO-GRADE"
       ],
-      "dependsOn": [
-        "phase-1-systems-foundation"
-      ],
+      "dependsOn": ["phase-1-systems-foundation"],
       "skills": [
         "API design",
         "Routing",
@@ -308,15 +290,8 @@
       "priority": "high",
       "status": "not-started",
       "progress": 0,
-      "tags": [
-        "AI-OK",
-        "REVIEW-DEEP",
-        "FRICTION-ZONE",
-        "PORTFOLIO-GRADE"
-      ],
-      "dependsOn": [
-        "phase-2-secure-backend-foundation"
-      ],
+      "tags": ["AI-OK", "REVIEW-DEEP", "FRICTION-ZONE", "PORTFOLIO-GRADE"],
+      "dependsOn": ["phase-2-secure-backend-foundation"],
       "skills": [
         "CI/CD concept",
         "GitHub Actions atau alternatif",
@@ -372,9 +347,7 @@
         "BREAK-AND-FIX",
         "PORTFOLIO-GRADE"
       ],
-      "dependsOn": [
-        "phase-3-devops-core"
-      ],
+      "dependsOn": ["phase-3-devops-core"],
       "skills": [
         "SAST",
         "SCA/dependency scanning",
@@ -428,9 +401,7 @@
         "BREAK-AND-FIX",
         "EXPLAIN-WITHOUT-AI"
       ],
-      "dependsOn": [
-        "phase-4-shift-left-security-pipeline"
-      ],
+      "dependsOn": ["phase-4-shift-left-security-pipeline"],
       "skills": [
         "CI/CD threat model",
         "Least privilege pipeline token",
@@ -488,9 +459,7 @@
         "NO-AI-FIRST",
         "PORTFOLIO-GRADE"
       ],
-      "dependsOn": [
-        "phase-5-cicd-security-and-supply-chain"
-      ],
+      "dependsOn": ["phase-5-cicd-security-and-supply-chain"],
       "skills": [
         "Cloud IAM",
         "VPC/networking basics",
@@ -551,9 +520,7 @@
         "BREAK-AND-FIX",
         "PORTFOLIO-GRADE"
       ],
-      "dependsOn": [
-        "phase-6-cloud-and-iac"
-      ],
+      "dependsOn": ["phase-6-cloud-and-iac"],
       "skills": [
         "Container image hardening",
         "Non-root container",
@@ -615,9 +582,7 @@
         "NO-AI-FIRST",
         "EXPLAIN-WITHOUT-AI"
       ],
-      "dependsOn": [
-        "phase-6-cloud-and-iac"
-      ],
+      "dependsOn": ["phase-6-cloud-and-iac"],
       "skills": [
         "Structured logging",
         "Metrics",
@@ -796,11 +761,7 @@
         "status": "not-started",
         "priority": "critical",
         "repo": "ai-assisted-devsecops-learning-system",
-        "tags": [
-          "PORTFOLIO-GRADE",
-          "EXPLAIN-WITHOUT-AI",
-          "REVIEW-DEEP"
-        ],
+        "tags": ["PORTFOLIO-GRADE", "EXPLAIN-WITHOUT-AI", "REVIEW-DEEP"],
         "progress": 0
       },
       {
@@ -810,11 +771,7 @@
         "status": "not-started",
         "priority": "critical",
         "repo": "systems-foundation-labs",
-        "tags": [
-          "NO-AI-FIRST",
-          "FRICTION-ZONE",
-          "EXPLAIN-WITHOUT-AI"
-        ],
+        "tags": ["NO-AI-FIRST", "FRICTION-ZONE", "EXPLAIN-WITHOUT-AI"],
         "progress": 0
       },
       {
@@ -839,12 +796,7 @@
         "status": "not-started",
         "priority": "high",
         "repo": "cicd-delivery-lab",
-        "tags": [
-          "AI-OK",
-          "REVIEW-DEEP",
-          "FRICTION-ZONE",
-          "PORTFOLIO-GRADE"
-        ],
+        "tags": ["AI-OK", "REVIEW-DEEP", "FRICTION-ZONE", "PORTFOLIO-GRADE"],
         "progress": 0
       },
       {

@@ -8,26 +8,42 @@
       name="description"
       content="A static execution dashboard for an AI-assisted DevSecOps V-shape learning roadmap."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="page-shell">
+      <!-- TOP NAV -->
+      <header class="topbar">
+        <div class="topbar-brand">
+          <span>DevSecOps Cockpit</span>
+        </div>
+        <div class="topbar-date" id="topbar-date"></div>
+      </header>
+
+      <!-- HERO -->
       <header class="hero">
-        <div>
+        <div class="hero-main">
           <p class="eyebrow">Learning cockpit</p>
           <h1 id="roadmap-title">AI-Assisted DevSecOps V-Shape Roadmap</h1>
           <p id="roadmap-description" class="hero-description">
-            Backend-heavy. Cloud-delivered. Security-disciplined. AI-accelerated, but not AI-dependent.
+            Backend-heavy. Cloud-delivered. Security-disciplined.
+            AI-accelerated, but not AI-dependent.
           </p>
         </div>
         <div class="hero-card" aria-label="Core direction">
           <span class="hero-card-label">Core Direction</span>
           <strong id="core-direction">Backend-heavy DevSecOps</strong>
-          <small id="core-subtitle">Cloud as delivery environment. Security as quality discipline.</small>
+          <small id="core-subtitle"
+            >Cloud as delivery environment. Security as quality
+            discipline.</small
+          >
         </div>
       </header>
 
       <main>
+        <!-- DASHBOARD ROW -->
         <section class="dashboard-grid" aria-label="Roadmap dashboard">
           <article class="panel progress-panel">
             <div class="panel-heading">
@@ -52,18 +68,25 @@
           </article>
         </section>
 
+        <!-- FILTERS -->
         <section class="panel controls-panel" aria-label="Filters">
           <div class="controls-header">
             <div>
               <p class="section-label">Execution filters</p>
               <h2>Find the next useful friction</h2>
             </div>
-            <button id="reset-filters" class="ghost-button" type="button">Reset filters</button>
+            <button id="reset-filters" class="ghost-button" type="button">
+              Reset filters
+            </button>
           </div>
           <div class="controls-grid">
             <label>
               Search
-              <input id="search-input" type="search" placeholder="phase, skill, repo, tag..." />
+              <input
+                id="search-input"
+                type="search"
+                placeholder="phase, skill, repo, tag..."
+              />
             </label>
             <label>
               Status
@@ -86,15 +109,22 @@
           </div>
         </section>
 
+        <!-- MAIN LAYOUT -->
         <section class="layout-grid">
           <aside class="side-column">
-            <section class="panel legend-panel" aria-label="Friction tag legend">
+            <section
+              class="panel legend-panel"
+              aria-label="Friction tag legend"
+            >
               <p class="section-label">Friction tags</p>
               <h2>Rules for slowing down</h2>
               <div id="tag-legend" class="legend-list"></div>
             </section>
 
-            <section class="panel portfolio-panel" aria-label="Portfolio repositories">
+            <section
+              class="panel portfolio-panel"
+              aria-label="Portfolio repositories"
+            >
               <p class="section-label">Portfolio board</p>
               <h2>Repo outputs</h2>
               <div id="portfolio-board" class="repo-list"></div>
@@ -113,12 +143,17 @@
               <div id="timeline" class="timeline"></div>
             </section>
 
-            <section id="phase-list" class="phase-list" aria-label="Roadmap phases"></section>
+            <section
+              id="phase-list"
+              class="phase-list"
+              aria-label="Roadmap phases"
+            ></section>
           </section>
         </section>
       </main>
     </div>
 
+    <!-- PHASE CARD TEMPLATE -->
     <template id="phase-card-template">
       <article class="phase-card">
         <div class="phase-card-header">
@@ -131,7 +166,9 @@
         </div>
         <div class="phase-tags tag-row"></div>
         <div class="phase-progress-wrap">
-          <div class="progress-track small"><div class="progress-bar"></div></div>
+          <div class="progress-track small">
+            <div class="progress-bar"></div>
+          </div>
           <span class="phase-progress-label"></span>
         </div>
         <div class="phase-quick-grid"></div>
@@ -141,5 +178,21 @@
     </template>
 
     <script src="app.js" defer></script>
+    <script>
+      // Live clock in topbar
+      function updateDate() {
+        const el = document.getElementById("topbar-date");
+        if (!el) return;
+        const now = new Date();
+        el.textContent = now.toLocaleDateString("en-US", {
+          weekday: "short",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+      }
+      updateDate();
+      setInterval(updateDate, 60000);
+    </script>
   </body>
 </html>

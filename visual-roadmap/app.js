@@ -48,7 +48,8 @@ function formatPriority(priority) {
 }
 
 function phaseProgress(phase) {
-  if (typeof phase.progress === "number") return Math.max(0, Math.min(100, phase.progress));
+  if (typeof phase.progress === "number")
+    return Math.max(0, Math.min(100, phase.progress));
   if (phase.status === "completed") return 100;
   if (phase.status === "in-progress") return 50;
   return 0;
@@ -80,7 +81,8 @@ function createTag(tag) {
 }
 
 function listItems(items) {
-  if (!items || items.length === 0) return "<p class=\"muted\">No items defined.</p>";
+  if (!items || items.length === 0)
+    return '<p class="muted">No items defined.</p>';
   return `<ul>${items.map((item) => `<li>${escapeHtml(String(item))}</li>`).join("")}</ul>`;
 }
 
@@ -117,9 +119,14 @@ function filteredPhases() {
   const search = state.filters.search.trim().toLowerCase();
   return state.roadmap.phases.filter((phase) => {
     const matchesSearch = !search || phaseSearchText(phase).includes(search);
-    const matchesStatus = state.filters.status === "all" || phase.status === state.filters.status;
-    const matchesTag = state.filters.tag === "all" || (phase.tags || []).includes(state.filters.tag);
-    const matchesPriority = state.filters.priority === "all" || phase.priority === state.filters.priority;
+    const matchesStatus =
+      state.filters.status === "all" || phase.status === state.filters.status;
+    const matchesTag =
+      state.filters.tag === "all" ||
+      (phase.tags || []).includes(state.filters.tag);
+    const matchesPriority =
+      state.filters.priority === "all" ||
+      phase.priority === state.filters.priority;
     return matchesSearch && matchesStatus && matchesTag && matchesPriority;
   });
 }
@@ -135,13 +142,21 @@ function currentPhase() {
 function calculateSummary() {
   const phases = state.roadmap.phases;
   const total = phases.length;
-  const completed = phases.filter((phase) => phase.status === "completed" || phaseProgress(phase) === 100).length;
-  const inProgress = phases.filter((phase) => phase.status === "in-progress").length;
+  const completed = phases.filter(
+    (phase) => phase.status === "completed" || phaseProgress(phase) === 100,
+  ).length;
+  const inProgress = phases.filter(
+    (phase) => phase.status === "in-progress",
+  ).length;
   const repos = phases.filter((phase) => phase.repo).length;
   const reposCompleted = phases.filter(
-    (phase) => phase.repo && (phase.status === "completed" || phaseProgress(phase) === 100),
+    (phase) =>
+      phase.repo &&
+      (phase.status === "completed" || phaseProgress(phase) === 100),
   ).length;
-  const progress = Math.round(phases.reduce((sum, phase) => sum + phaseProgress(phase), 0) / total);
+  const progress = Math.round(
+    phases.reduce((sum, phase) => sum + phaseProgress(phase), 0) / total,
+  );
   return { total, completed, inProgress, repos, reposCompleted, progress };
 }
 
@@ -153,7 +168,12 @@ function populateFilters() {
 
   fillSelect(elements.statusFilter, statuses, formatStatus, "All statuses");
   fillSelect(elements.tagFilter, tags, (tag) => `[${tag}]`, "All tags");
-  fillSelect(elements.priorityFilter, priorities, formatPriority, "All priorities");
+  fillSelect(
+    elements.priorityFilter,
+    priorities,
+    formatPriority,
+    "All priorities",
+  );
 }
 
 function fillSelect(select, values, labelFn, defaultLabel) {
@@ -170,9 +190,13 @@ function fillSelect(select, values, labelFn, defaultLabel) {
 
 function renderHeader() {
   const { roadmap } = state;
-  elements.title.textContent = roadmap.title || "AI-Assisted DevSecOps V-Shape Roadmap";
-  elements.description.textContent = roadmap.description || "Backend-heavy. Cloud-delivered. Security-disciplined.";
-  elements.coreDirection.textContent = roadmap.coreDirection?.primary || "Backend-heavy DevSecOps";
+  elements.title.textContent =
+    roadmap.title || "AI-Assisted DevSecOps V-Shape Roadmap";
+  elements.description.textContent =
+    roadmap.description ||
+    "Backend-heavy. Cloud-delivered. Security-disciplined.";
+  elements.coreDirection.textContent =
+    roadmap.coreDirection?.primary || "Backend-heavy DevSecOps";
   elements.coreSubtitle.textContent = [
     roadmap.coreDirection?.cloud,
     roadmap.coreDirection?.security,
@@ -208,9 +232,12 @@ function renderCurrentFocus() {
   if (!phase) return;
   elements.currentTitle.textContent = `Phase ${phase.phase}: ${phase.title}`;
   elements.currentMission.textContent = phase.mission || "";
-  elements.currentNextAction.textContent = phase.nextAction || "Review exit criteria and select one manual drill.";
+  elements.currentNextAction.textContent =
+    phase.nextAction || "Review exit criteria and select one manual drill.";
   elements.currentTags.innerHTML = "";
-  (phase.tags || []).forEach((tag) => elements.currentTags.appendChild(createTag(tag)));
+  (phase.tags || []).forEach((tag) =>
+    elements.currentTags.appendChild(createTag(tag)),
+  );
 }
 
 function renderLegend() {
@@ -264,7 +291,9 @@ function renderTimeline(phases) {
       <small>${phaseProgress(phase)}% · ${formatStatus(phase.status)}</small>
     `;
     node.addEventListener("click", () => {
-      document.getElementById(phase.id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      document
+        .getElementById(phase.id)
+        ?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     elements.timeline.appendChild(node);
   });
@@ -283,15 +312,27 @@ function renderPhaseCards(phases) {
   }
 
   phases.forEach((phase) => {
-    const card = elements.phaseTemplate.content.firstElementChild.cloneNode(true);
+    const card =
+      elements.phaseTemplate.content.firstElementChild.cloneNode(true);
     card.id = phase.id;
+    card.dataset.phase = phase.phase;
     card.querySelector(".phase-number").textContent = `Phase ${phase.phase}`;
     card.querySelector(".phase-title").textContent = phase.title;
     card.querySelector(".phase-mission").textContent = phase.mission || "";
 
     const meta = card.querySelector(".phase-meta");
-    meta.appendChild(createPill(formatStatus(phase.status), `status-badge status-${phase.status}`));
-    meta.appendChild(createPill(formatPriority(phase.priority), `priority-badge priority-${phase.priority}`));
+    meta.appendChild(
+      createPill(
+        formatStatus(phase.status),
+        `status-badge status-${phase.status}`,
+      ),
+    );
+    meta.appendChild(
+      createPill(
+        formatPriority(phase.priority),
+        `priority-badge priority-${phase.priority}`,
+      ),
+    );
 
     const tags = card.querySelector(".phase-tags");
     (phase.tags || []).forEach((tag) => tags.appendChild(createTag(tag)));
@@ -386,7 +427,8 @@ function attachEvents() {
 async function loadRoadmap() {
   try {
     const response = await fetch("roadmap-data.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Failed to load roadmap-data.json: ${response.status}`);
+    if (!response.ok)
+      throw new Error(`Failed to load roadmap-data.json: ${response.status}`);
     state.roadmap = await response.json();
     populateFilters();
     attachEvents();
