@@ -110,7 +110,7 @@
       "repo": "ai-assisted-devsecops-learning-system",
       "competencyQuestion": "Apakah saya punya sistem belajar yang membuat AI partner langsung memahami tujuan, aturan, dan standar saya?",
       "priority": "critical",
-      "status": "not-started",
+      "status": "learning",
       "progress": 0,
       "tags": ["PORTFOLIO-GRADE", "EXPLAIN-WITHOUT-AI", "REVIEW-DEEP"],
       "dependsOn": [],
